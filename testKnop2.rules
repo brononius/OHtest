@@ -1,0 +1,13 @@
+rule "Test Knop 2"
+when
+// 	Time cron "5 4 3 * * ? *"  						// Elke dag, om 03:04:05
+	Item TestKnop2 changed
+then
+	logInfo("TEST", "...Test start...")
+	var String iets = -5
+	if ( iets > -8) {  
+		logInfo("TEST", "OK???")
+		}
+	logInfo("TEST", "...Test stop...")
+end
+
