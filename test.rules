@@ -1,0 +1,19 @@
+rule "Test Knop 1"
+when
+  Item TestKnop1 changed
+then
+  logInfo("TEST", "...Test start...")
+  //executeCommandLine("touch", "/tmp/test")
+  //executeCommandLine("/usr/bin/echo", "TEST", ">", "/tmp/test")
+  //executeCommandLine("touch", "/tmp/test2")
+	var String result = executeCommandLine(Duration.ofSeconds(1), "echo", "TEST222", ">", "/tmp/test2")
+	logInfo("TEST", "...Test end ...")
+  //var String result = executeCommandLine(Duration.ofSeconds(5), "cat", "/diy/power_status")
+	logInfo("TEST", "Result: " + result)
+  //executeCommandLine(Duration.ofSeconds(9), "/bin/echo 'Iets' >> /var/log/openhab/belangrijk.log")
+  // val String currentTime = String::format( "%1$te/%1$tm/%1$tY %1$tT", new java.util.Date )
+  // executeCommandLine(Duration.ofSeconds(9), "sed -i '1s;^;" + currentTime + " TESTESTET? \\n " + ";' /var/log/openhab/belangrijk.log")
+  // executeCommandLine(Duration.ofSeconds(2),"sed -i '1s;^;" + currentTime + " TESTESTET? \\n " + ";' /var/log/openhab/belangrijk.log")
+  // executeCommandLine(Duration.ofSeconds(5), "/bin/sh -c (sed -i '1s;^;" + currentTime + " Groot waterverlies? " + waterVerschil + " l \\n " + ";' /var/log/openhab/belangrijk.log)")
+  // executeCommandLine(Duration.ofSeconds(2), "/etc/openhab/scripts/ModeHekkenActivate.sh")
+end
